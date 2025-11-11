@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "mett.palemannie.squakeported.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "MixinEntity",
+    "MixinLivingEntity",
+    "MixinPlayerEntity"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
