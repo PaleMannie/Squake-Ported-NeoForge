@@ -336,11 +336,22 @@ public class SquakeClientPlayer {
 
     private static void minecraft_SwingLimbsBasedOnMovement(Player player)
     {
+        player.walkAnimation.speedOld = player.walkAnimation.speed;
         double d0 = player.getX() - player.xo;
         double d1 = player.getZ() - player.zo;
         float f6 = Mth.sqrt((float) (d0 * d0 + d1 * d1)) * 4.0F;
+        if(f6 > 1.0F) f6 = 1.0F;
+        player.walkAnimation.speed += (f6 - player.walkAnimation.speed) * 0.4F;
+
+        /// this made the walking animation too fast while in Quake mode
+        //player.walkAnimation.position += player.walkAnimation.speed;
+
+        /// I don't like it, using the Forge implementaion above for reasons stated in the above comment
+        /*double d0 = player.getX() - player.xo;
+        double d1 = player.getZ() - player.zo;
+        float f6 = Mth.sqrt((float) (d0 * d0 + d1 * d1)) * 4.0F;
         if (f6 > 1.0F) {f6 = 1.0F;}
-        player.walkAnimation.update(f6, 0.4F, 0);
+        player.walkAnimation.update(f6, 0.4F, 0);*/
     }
 
     private static void minecraft_WaterMove(Player player, float sidemove, float upmove, float forwardmove)
