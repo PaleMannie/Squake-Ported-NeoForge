@@ -43,7 +43,7 @@ public class SquakeClientPlayer {
 
     public static boolean moveEntityWithHeading(Player player, ISquakeEntity squakeEntity, float sidemove, float upmove, float forwardmove)
     {
-        if(!player.level().isClientSide)
+        if(!player.level().isClientSide())
             return false;
 
         if(!SquakeConfig.isEnabled())
@@ -73,7 +73,7 @@ public class SquakeClientPlayer {
 
     public static void beforeOnLivingUpdate(Player player)
     {
-        if(!player.level().isClientSide)
+        if(!player.level().isClientSide())
             return;
 
         if(setDidJumpThisTick != null)
@@ -112,7 +112,7 @@ public class SquakeClientPlayer {
 
     public static boolean moveRelative(Player player, ISquakeEntity squakeEntity, float sidemove, float upmove, float forwardmove, float friction)
     {
-        if(!player.level().isClientSide)
+        if(!player.level().isClientSide())
             return false;
 
         if(!SquakeConfig.isEnabled())
@@ -144,7 +144,7 @@ public class SquakeClientPlayer {
 
     public static void afterJump(Player player)
     {
-        if(!player.level().isClientSide)
+        if(!player.level().isClientSide())
             return;
 
         if(!SquakeConfig.isEnabled())
@@ -304,7 +304,7 @@ public class SquakeClientPlayer {
         double motionY = Motions.getMotionY(player);
 
         /// The commented out condition caused the physics to break above and under the build limit while Quake mode was on.
-        if(player.level().isClientSide && (/*!player.level().isLoaded(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())) ||*/ player.level().getChunk(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())).getPersistedStatus() != ChunkStatus.FULL))
+        if(player.level().isClientSide() && (/*!player.level().isLoaded(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())) ||*/ player.level().getChunk(new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ())).getPersistedStatus() != ChunkStatus.FULL))
         {
             if(player.getY() > 0.0D)
             {
