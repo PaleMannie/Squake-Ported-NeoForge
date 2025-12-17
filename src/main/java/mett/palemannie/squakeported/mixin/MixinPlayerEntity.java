@@ -46,7 +46,7 @@ public abstract class MixinPlayerEntity extends LivingEntity implements ISquakeE
     public void beforeFall(double p_397701_, float p_150093_, DamageSource p_150095_, CallbackInfoReturnable<Boolean> cir)
     {
         if(level().isClientSide()) return;
-        wasVelocityChangedBeforeFall = hasImpulse;
+        wasVelocityChangedBeforeFall = needsSync;
     }
 
     @Inject(method = "causeFallDamage", at = @At("RETURN"),
@@ -58,6 +58,6 @@ public abstract class MixinPlayerEntity extends LivingEntity implements ISquakeE
     public void afterFall(double p_397701_, float p_150093_, DamageSource p_150095_, CallbackInfoReturnable<Boolean> cir) {
 
         if(level().isClientSide()) return;
-        hasImpulse = wasVelocityChangedBeforeFall;
+        needsSync = wasVelocityChangedBeforeFall;
     }
 }
