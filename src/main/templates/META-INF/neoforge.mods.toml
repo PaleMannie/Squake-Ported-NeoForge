@@ -11,9 +11,8 @@ logoFile="squakeported.png" #optional
 # A text field displayed in the mod UI
 #credits="" #optional
 
-authors="${mod_authors}"
-
-description='''${mod_description}'''
+authors="PaleMannie / Manfred Blasser"
+description='''A Quake-style movement mod for Minecraft'''
 
 [[mixins]]
 config="${mod_id}.mixins.json"
