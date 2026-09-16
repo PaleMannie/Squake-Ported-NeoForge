@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
+    "MixinClientPacketListener",
     "MixinEntity",
     "MixinLivingEntity",
     "MixinPlayerEntity"
