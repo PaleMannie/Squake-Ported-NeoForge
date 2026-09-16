@@ -6,7 +6,8 @@
   "client": [
     "MixinEntity",
     "MixinLivingEntity",
-    "MixinPlayerEntity"
+    "MixinPlayerEntity",
+    "MixinClientPacketListener"
   ],
   "injectors": {
     "defaultRequire": 1
