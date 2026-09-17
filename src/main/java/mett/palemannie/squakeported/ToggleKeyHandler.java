@@ -1,5 +1,6 @@
 package mett.palemannie.squakeported;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -10,10 +11,10 @@ import net.minecraft.resources.Identifier;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import org.lwjgl.glfw.GLFW;
 
 public class ToggleKeyHandler {
-    private static final KeyMapping TOGGLE_KEY = new KeyMapping("squake.key.toggle", GLFW.GLFW_KEY_COMMA, KeyMapping.Category.register(Identifier.parse("squake")));
+
+    private static final KeyMapping TOGGLE_KEY = new KeyMapping("squake.key.toggle", InputConstants.KEY_COMMA, KeyMapping.Category.register(Identifier.parse("squake")));
 
     public static void setup()
     {

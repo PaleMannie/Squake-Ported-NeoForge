@@ -6,7 +6,7 @@ modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 
-logoFile="squakeported.png" #optional
+iconFile="squakeported.png" #optional
 
 # A text field displayed in the mod UI
 #credits="" #optional
