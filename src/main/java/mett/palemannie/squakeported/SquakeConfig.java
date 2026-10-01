@@ -112,6 +112,20 @@ public class SquakeConfig
     @SubscribeEvent
     public static void onLoad(final ModConfigEvent.Loading configEvent)
     {
+        updateConfig(configEvent);
+    }
+
+    @SubscribeEvent
+    public static void onReload(final ModConfigEvent.Reloading configEvent)
+    {
+        updateConfig(configEvent);
+    }
+
+    private static void updateConfig(final ModConfigEvent configEvent)
+    {
+        if (configEvent.getConfig().getSpec() != SPEC) {
+            return;
+        }
         SquakePorted.LOGGER.debug("Loaded squake config file {}", configEvent.getConfig().getFileName());
         sharkingEnabled = SHARKING_ENABLED.get();
         trimpingEnabled = TRIMPING_ENABLED.get();

@@ -2,10 +2,9 @@
   "required": true,
   "package": "mett.palemannie.squakeported.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "MixinClientPacketListener"
-  ],
+  "mixins": [],
   "client": [
+    "MixinClientPacketListener",
     "MixinEntity",
     "MixinLivingEntity",
     "MixinPlayerEntity"

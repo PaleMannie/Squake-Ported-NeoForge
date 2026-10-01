@@ -1,7 +1,6 @@
 package mett.palemannie.squakeported;
 
 import com.mojang.logging.LogUtils;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -13,9 +12,8 @@ public class SquakePorted {
     public static final String MODID = "squakeported";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public SquakePorted(IEventBus modEventBus, ModContainer modContainer) {
+    public SquakePorted(ModContainer modContainer) {
 
-        modContainer.registerConfig(ModConfig.Type.COMMON, SquakeConfig.SPEC);
-        modEventBus.addListener(ToggleKeyHandler::registerKeys);
+        modContainer.registerConfig(ModConfig.Type.LOCAL, SquakeConfig.SPEC, MODID + "-common.toml");
     }
 }
