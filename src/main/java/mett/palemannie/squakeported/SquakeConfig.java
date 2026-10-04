@@ -5,7 +5,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@EventBusSubscriber(modid = SquakePorted.MODID)
+@EventBusSubscriber(modid = SquakePorted.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class SquakeConfig
 {
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();

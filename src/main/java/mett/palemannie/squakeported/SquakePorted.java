@@ -16,6 +16,5 @@ public class SquakePorted {
     public SquakePorted(IEventBus modEventBus, ModContainer modContainer) {
 
         modContainer.registerConfig(ModConfig.Type.COMMON, SquakeConfig.SPEC);
-        modEventBus.addListener(ToggleKeyHandler::registerKeys);
     }
 }
